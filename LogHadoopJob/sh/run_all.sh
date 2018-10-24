@@ -1,2 +1,3 @@
 sh ./analyze.sh true
-sh ./top.sh 
+sh ./top.sh
+test
