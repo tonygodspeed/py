@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+#coding=utf8
+
+from MR_BASE import *
+reload(sys)
+sys.setdefaultencoding("utf-8")
+condition = os.environ.get('condition')
+
+class MR_PLAY_MUSIC(mr_base):
+    def __init__(self):
+        mt_type = [
+                      {'key':'SRC',    'type':'s', 'mt':r'^.*?<SRC:' + common_def.MT_VALUE_INVALID_POSTFIX},
+                      {'key':'U1',      'type':'i', 'mt':r'U:'+common_def.MT_VALUE_INVALID_POSTFIX+ 'PROD:MUSIC.*?'},
+                      #{'key':'T',      'type':'i', 'mt':r'\|T:'+common_def.MT_VALUE_INVALID_POSTFIX+ 'PROD:MUSIC.*?'},
+                      {'key':'U2',      'type':'i',  'mt':common_def.MT_VALUE_U + common_def.MT_VALUE_END},
+                  ]
+        mr_base.__init__(self,mt_type,"PLAY_MUSIC")
+mr_obj = MR_PLAY_MUSIC()
+
+if __name__ == '__main__':
+    strTest = r'<SRC:MUSIC_8.2.0.0_PT|ACT:PLAY_MUSIC|S:KwMV|U:28533825|N:13671013177|T:1|N:|T:0|NA:幻影|AR:谭咏麟|AL:港乐·Alan Live 2002|F:SQ|B:0|D:0|RID:MUSIC_92810|S1:3136182347|S2:1125609929|FV:|PF:0|UI:224079260|DT:0|PSRC:VER=2015;FROM=曲库->歌手->谭咏麟->港乐·Alan&nbsp;Live&nbsp;2002(16953)|radio_src:0|NOWPLAY:artist|SCRN:1920*1080|ENPI:001|LSRC:|ISVIP:0|VIPTY:-1|VIPLV:-1|DLY:0|MTREE:0|GS:1|FSB:0|TMM:0|TMS:0|MULTI:0||BLKTM:0|BLKCNT:0|BR:0|FMT:mp3|ENDTYPE:0|CT:|CACHE:0|CACHEDSZ:11602674|CTYPE:song0|PT:289970|DUR:290|SPEED:87252|FSIZE:11602674|DELAY:2184|FDMT:1170|FDMP:3|FSPT:2168|BLKPOS:0|STARTSIZE:409600|AACRESULT:0|CHANNEL_NAME:10001_01|PROD:MUSIC|VER:8.2.0.0_BCS29|PLAT:WIN32|FROM:kwmusic2016_web_1.exe|UI:|{kwmusic2016_web_1.exe}|K:420118680|RESEND:0|U:28533825>'
+    #strTest = r'<SRC:kwplayer_ar_7.8.1.0|ACT:PLAY_MUSIC|PROD:kwplayer|VER:7.8.1.0|PLAT:ar|FROM:kwplayer_ar_7.8.1.0_kwltc.apk|OLDFROM:kwplayer_ar_7.8.1.0_kwltc.apk|{kwplayer_ar_7.8.1.0_kwltc.apk}|ERR:PLAY_MUSIC|SUBERR:0|UI:0|UDID:|DEVID:866002023516809|U:50642862|IMEI:866002023516809|MACADDR:38:bc:1a:b8:23:75|UUID:|DEV:Meizu MX4 Pro mx4pro|OSV:4.4.4|NE:WIFI|NE_TYPE:WIFI|WIFI_ONLY:false|CT:2016/05/24 14:16:59.554 +0800|CIP:111.207.202.7|PU:50642862|DEP:1|MEM:3017580544|OFFLN:0|UNICOMFLOW:0|PROJECT:0|LOC:40.001871;116.390014|GPS:40.001871;116.390014|DBG:0|ABGROUP:|NA:守护家|AR:TFBOYS|AL:守护家|RID:7095180|DUR:225|T:0|CTYPE:song0|PT:0|DELAY:3373|BLKTM:0|BLKCNT:0|BR:0|FMT:null|CACHE:1|LSRC:播放队列|PSRC:乐库->今日精华->5月24日最新单曲-<PID_1082685104;SEC_-1;POS_-1;DIGEST_8>(20160524)|FISIZE:0|SPEED:0|ENDTYPE:1|MEM:3017580544|LISTENSAVE:false>'
+    mr_obj.LocalTest(strTest)
+    pass

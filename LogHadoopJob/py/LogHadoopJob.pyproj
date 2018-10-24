@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>06af4cb2-d708-450e-9a5e-b8b1b4cda438</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>MR\MR_DOWN_AD.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LogHadoopJob</Name>
+    <RootNamespace>LogHadoopJob</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="common_def.py" />
+    <Compile Include="common_util.py" />
+    <Compile Include="dispatcher.py" />
+    <Compile Include="mapper.py" />
+    <Compile Include="MR\MR_AB_LOG.py" />
+    <Compile Include="MR\MR_ACT_INSTALL_FX.py" />
+    <Compile Include="MR\MR_AppStart.py" />
+    <Compile Include="MR\MR_APP_TREASURE.py" />
+    <Compile Include="MR\MR_BASE.py" />
+    <Compile Include="MR\MR_CL_START.py" />
+    <Compile Include="MR\MR_COMMON_START.py" />
+    <Compile Include="MR\MR_CRASHREPORT.py" />
+    <Compile Include="MR\MR_DataRepairDES.py" />
+    <Compile Include="MR\MR_DISP_KSLIVE.py" />
+    <Compile Include="MR\MR_DISP_START.py" />
+    <Compile Include="MR\MR_DOWN_AD.py" />
+    <Compile Include="MR\MR_DRTASKMGR.py" />
+    <Compile Include="MR\MR_ERROR_LOG.py" />
+    <Compile Include="MR\MR_INSTALL.py" />
+    <Compile Include="MR\MR_INSTALL_INFO.py" />
+    <Compile Include="MR\MR_INSTALL_REG_TOOLS.py" />
+    <Compile Include="MR\MR_KSLIVE.py" />
+    <Compile Include="MR\MR_PLAY_MUSIC.py" />
+    <Compile Include="MR\MR_RECOM_RUN.py" />
+    <Compile Include="MR\MR_RECOM_SHOW.py" />
+    <Compile Include="MR\MR_RECOM_START.py" />
+    <Compile Include="MR\MR_REGDLL.py" />
+    <Compile Include="MR\MR_UNINSTALL.py" />
+    <Compile Include="MR\MR_USR_CLK.py" />
+    <Compile Include="reducer.py" />
+    <Compile Include="Runner.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MR\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
